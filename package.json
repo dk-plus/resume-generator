@@ -1,0 +1,14 @@
+{
+  "name": "resume-generator",
+  "version": "1.0.0",
+  "description": "this is a tool to generate a resume.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dkplus",
+  "license": "ISC",
+  "dependencies": {
+    "html-pdf": "^2.2.0"
+  }
+}
