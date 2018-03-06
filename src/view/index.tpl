@@ -1,46 +1,62 @@
+{{set info = data.info}}
+{{set exp = data.experience}}
 <div class="info">
   <div class="header">
     <div class="avater">
-      <img src="img.jpg" alt="">
+      <img src={{info.avater}} alt="">
     </div>
-    <div class="name">邓康</div>
-    <div class="detail">意向：前端开发</div>
+    <div class="name">{{info.name}}</div>
+    <div class="detail">{{info.detail}}</div>
   </div>
   <div class="personal-info">
     <h3 class="title">个人信息</h3>
+    {{each info.personal as per}}
     <div>
-      <label for="blog">博客：</label><div id="blog"><a href="http://www.cnblogs.cn/dkplus">www.cnblogs.cn/dkplus</a></div>
+      <label for={{per[0]}}>博客：</label><div id={{per[0]}}>{{per[1]}}</div>
     </div>
+    {{/each}}
   </div>
   <div class="skills">
     <h3 class="title">个人技能</h3>
     <ul>
+      {{each info.skills as skill}}
       <li class="skill">
-        <label class="name" for="css">css</label>
-        <div class="bar" id="css">
+        <label class="name" for={{skill[0]}}>{{skill[0]}}</label>
+        <div class="bar" id={{skill[0]}}>
           <div class="full">
-            <div class="val" data-val="90"></div>
+            <div class="val" data-val={{skill[1]}}></div>
           </div>
         </div>
       </li>
+      {{/each}}
     </ul>
   </div>
 </div>
 <div class="experience">
-  <div id="exp1" class="exp">
-    <h3 class="title">教育经历</h3>
+  {{each exp as exp}}
+  <div id={{exp.id}} class="exp">
+    <h3 class="title">{{exp.id}}</h3>
     <div class="sub-title">
-      <div class="name">广东金融学院</div>
-      <div class="time">2015.09-至今</div>
+      <div class="name">{{exp.name}}</div>
+      <div class="time">{{exp.time}}</div>
     </div>
-    <div class="detail">学习blablablabla</div>
+    {{each exp.detail as detail}}
+    <div class="detail">
+    {{detail}}
+    </div>
+    {{/each}}
     <div class="list">
       <ul>
-        <li class="item">html</li>
+        {{each exp.ul as ul}}
+        <li class="item">{{ul}}</li>
+        {{/each}}
       </ul>
       <ol>
-        <li class="item">html</li>
+        {{each exp.ul as ol}}
+        <li class="item">{{ol}}</li>
+        {{/each}}
       </ol>
     </div>
   </div>
+  {{/each}}
 </div>

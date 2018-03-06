@@ -10443,9 +10443,9 @@ return jQuery;
 
 var $ = __webpack_require__(0);
 var render = __webpack_require__(2);
-var resetCss = __webpack_require__(16);
+var resetCss = __webpack_require__(11);
 
-__webpack_require__(11);
+__webpack_require__(12);
 
 // render.init();
 resetCss.init();
@@ -11778,7 +11778,7 @@ if (true) {
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = {"title":"dkplus"}
+module.exports = {"info":{"avater":"img.jpg","name":"邓康","detail":"意向：前端开发","personal":[["e-mail","dkplus@qq.com"],["地址","天河龙洞广东金融学院"],["博客","http://www.cnblogs.cn/dkplus"],["github","http://github.com/dk-plus"],["手机","13556130815"]],"skills":[["css",90],["javascript",80],["webpack",60],["nodejs",40],["canvas",40],["html",90]]},"experience":[{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]},{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]},{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]}]}
 
 /***/ }),
 /* 10 */
@@ -11788,7 +11788,7 @@ module.exports = function (obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '<div class="info">\r\n  <div class="header">\r\n    <div class="avater">\r\n      <img src="img.jpg" alt="">\r\n    </div>\r\n    <div class="name">邓康</div>\r\n    <div class="detail">意向：前端开发</div>\r\n  </div>\r\n  <div class="personal-info">\r\n    <h3 class="title">个人信息</h3>\r\n    <div>\r\n      <label for="blog">博客：</label><div id="blog"><a href="http://www.cnblogs.cn/dkplus">www.cnblogs.cn/dkplus</a></div>\r\n    </div>\r\n  </div>\r\n  <div class="skills">\r\n    <h3 class="title">个人技能</h3>\r\n    <ul>\r\n      <li class="skill">\r\n        <label class="name" for="css">css</label>\r\n        <div class="bar" id="css">\r\n          <div class="full">\r\n            <div class="val" data-val="90"></div>\r\n          </div>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div class="experience">\r\n  <div id="exp1" class="exp">\r\n    <h3 class="title">教育经历</h3>\r\n    <div class="sub-title">\r\n      <div class="name">广东金融学院</div>\r\n      <div class="time">2015.09-至今</div>\r\n    </div>\r\n    <div class="detail">学习blablablabla</div>\r\n    <div class="list">\r\n      <ul>\r\n        <li class="item">html</li>\r\n      </ul>\r\n      <ol>\r\n        <li class="item">html</li>\r\n      </ol>\r\n    </div>\r\n  </div>\r\n</div>';
+__p += '{{set info = data.info}}\r\n{{set exp = data.experience}}\r\n<div class="info">\r\n  <div class="header">\r\n    <div class="avater">\r\n      <img src={{info.avater}} alt="">\r\n    </div>\r\n    <div class="name">{{info.name}}</div>\r\n    <div class="detail">{{info.detail}}</div>\r\n  </div>\r\n  <div class="personal-info">\r\n    <h3 class="title">个人信息</h3>\r\n    {{each info.personal as per}}\r\n    <div>\r\n      <label for={{per[0]}}>博客：</label><div id={{per[0]}}>{{per[1]}}</div>\r\n    </div>\r\n    {{/each}}\r\n  </div>\r\n  <div class="skills">\r\n    <h3 class="title">个人技能</h3>\r\n    <ul>\r\n      {{each info.skills as skill}}\r\n      <li class="skill">\r\n        <label class="name" for={{skill[0]}}>{{skill[0]}}</label>\r\n        <div class="bar" id={{skill[0]}}>\r\n          <div class="full">\r\n            <div class="val" data-val={{skill[1]}}></div>\r\n          </div>\r\n        </div>\r\n      </li>\r\n      {{/each}}\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div class="experience">\r\n  {{each exp as exp}}\r\n  <div id={{exp.id}} class="exp">\r\n    <h3 class="title">{{exp.id}}</h3>\r\n    <div class="sub-title">\r\n      <div class="name">{{exp.name}}</div>\r\n      <div class="time">{{exp.time}}</div>\r\n    </div>\r\n    {{each exp.detail as detail}}\r\n    <div class="detail">\r\n    {{detail}}\r\n    </div>\r\n    {{/each}}\r\n    <div class="list">\r\n      <ul>\r\n        {{each exp.ul as ul}}\r\n        <li class="item">{{ul}}</li>\r\n        {{/each}}\r\n      </ul>\r\n      <ol>\r\n        {{each exp.ul as ol}}\r\n        <li class="item">{{ol}}</li>\r\n        {{/each}}\r\n      </ol>\r\n    </div>\r\n  </div>\r\n  {{/each}}\r\n</div>';
 
 }
 return __p
@@ -11796,16 +11796,6 @@ return __p
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11826,6 +11816,12 @@ var init = function init() {
 module.exports = {
   init: init
 };
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
