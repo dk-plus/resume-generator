@@ -10443,10 +10443,12 @@ return jQuery;
 
 var $ = __webpack_require__(0);
 var render = __webpack_require__(2);
+var resetCss = __webpack_require__(16);
 
 __webpack_require__(11);
 
 // render.init();
+resetCss.init();
 
 console.log($);
 
@@ -11786,7 +11788,7 @@ module.exports = function (obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '';
+__p += '<div class="info">\r\n  <div class="header">\r\n    <div class="avater">\r\n      <img src="img.jpg" alt="">\r\n    </div>\r\n    <div class="name">邓康</div>\r\n    <div class="detail">意向：前端开发</div>\r\n  </div>\r\n  <div class="personal-info">\r\n    <h3 class="title">个人信息</h3>\r\n    <div>\r\n      <label for="blog">博客：</label><div id="blog"><a href="http://www.cnblogs.cn/dkplus">www.cnblogs.cn/dkplus</a></div>\r\n    </div>\r\n  </div>\r\n  <div class="skills">\r\n    <h3 class="title">个人技能</h3>\r\n    <ul>\r\n      <li class="skill">\r\n        <label class="name" for="css">css</label>\r\n        <div class="bar" id="css">\r\n          <div class="full">\r\n            <div class="val" data-val="90"></div>\r\n          </div>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div class="experience">\r\n  <div id="exp1" class="exp">\r\n    <h3 class="title">教育经历</h3>\r\n    <div class="sub-title">\r\n      <div class="name">广东金融学院</div>\r\n      <div class="time">2015.09-至今</div>\r\n    </div>\r\n    <div class="detail">学习blablablabla</div>\r\n    <div class="list">\r\n      <ul>\r\n        <li class="item">html</li>\r\n        <li class="item">js</li>\r\n        <li class="item">学习css</li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</div>';
 
 }
 return __p
@@ -11797,6 +11799,33 @@ return __p
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var init = function init() {
+  // 个人技能进度条值
+  $('[data-val]').each(function (index, item) {
+    var $item = $(item);
+    var val = $item.attr('data-val');
+    $item.css({
+      width: val + '%'
+    });
+  });
+};
+
+module.exports = {
+  init: init
+};
 
 /***/ })
 /******/ ]);

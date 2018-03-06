@@ -3,29 +3,32 @@
 
 body {
   width: 100%;
-  min-height: 500px;
 }
 
 #main {
   .flex(row);
   width: 100%;
-  height: 100%;
   align-items: flex-start;
+  color: #666;;
+  > div {
+    padding: 30px 0;
+  }
   .info {
-    width: 40%;
+    width: 33.3%;
+    min-width: 300px;
     height: 100%;
-    background-color: #1DB0B8;
-    color: #011935;
     .header {
       position: relative;
       width: 100%;
       height: 200px;
+      color: #fff;
+      text-shadow: 0 0 5px #777;
       >* {
         text-align: center;
         margin-top: 10px;
       }
       .avater {
-        margin: 50px auto 10px;
+        margin: 10px auto;
         width: 100px;
         height: 100px;
         border-radius: 100%;
@@ -38,19 +41,19 @@ body {
         }
       }
       .name {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 500;
       }
       .detail {
-        font-size: 18px;
+        font-size: 20px;
       }
     }
     .personal-info {
       padding: 0 20px;
-      div {
+      > div {
         .flex(row);
         justify-content: space-between;
-        margin-bottom: 5px;
+        margin: 15px 0;
       }
     }
     .skills {      
@@ -59,7 +62,7 @@ body {
         .flex(row);
         justify-content: space-between;
         height: 20px;
-        margin-bottom: 5px;
+        margin: 15px 0;
         line-height: 20px;
         .name {
           text-align: right;
@@ -70,11 +73,10 @@ body {
           box-shadow: 0 0 3px #000;
         }
         .full {
-          width: 180px;
+          width: 150px;
           height: 15px;
           background-color: #D0E9FF;
           .val {
-            width: 90%;
             height: 100%;
             background-color: #00343F;
           }
@@ -83,21 +85,41 @@ body {
     }
   }
   .experience {
-    width: 60%;
+    width: 66.7%;
     height: 100%;
-    background-color: #E6E6E6;
+    border-left: 1px solid #999;
     .exp {    
       padding: 0 20px;
       .sub-title {
         .flex(row);
         justify-content: space-between;
+        font-weight: bold;
+      }
+      .detail {
+        margin: 5px 0;
       }
     }
   }
 }
 .title {
   margin: 20px 0 5px;
+  border-left: 5px solid #1db0b8;
+  border-right: 3px solid #00343F;
+  box-shadow: 0 0 3px black;
+  background: linear-gradient(to right,#00343F,#1db0b8);
+  color: #fff;
+  text-indent: 10px;
+  padding: 3px;
+  border-radius: 0 0 50px 0;
 }
 .sub-title {
   margin: 10px 0 5px;
+  color: #555;
+}
+label {
+  font-weight: bold;
+  color: #00343F;
+}
+a {
+  color: #1db0b8;
 }
