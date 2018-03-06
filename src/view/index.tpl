@@ -37,9 +37,10 @@
     <div class="list">
       <ul>
         <li class="item">html</li>
-        <li class="item">js</li>
-        <li class="item">学习css</li>
       </ul>
+      <ol>
+        <li class="item">html</li>
+      </ol>
     </div>
   </div>
 </div>

@@ -151,7 +151,7 @@ body {
 }
 #main .info .skills li .full .val {
   height: 100%;
-  background-color: #00343F;
+  background: linear-gradient(to left, #00343F, #1db0b8);
 }
 #main .experience {
   width: 66.7%;
