@@ -4,7 +4,7 @@ const resetCss = require('./view/reset_css');
 
 require('./view/index.less');
 
-// render.init();
+render.init();
 resetCss.init();
 
 console.log($);

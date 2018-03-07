@@ -4,5 +4,5 @@
 ## 使用方法
 1. 克隆项目，运行`npm install`
 2. 修改`src/modules/data.json`
-3. 运行`npm run dev`，打开`dist`目录的`index.html`预览效果
-4. 运行`npm run prod`，最后生成`pdf`到`dist`目录
+3. 运行`npm run dev`，用chrome打开`dist`目录的`index.html`预览效果
+4. 在菜单中选择`打印`，可另存为`pdf`

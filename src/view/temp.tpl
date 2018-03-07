@@ -1,23 +1,25 @@
+{{set info = data.info}}
+{{set exp = data.experience}}
 <div class="info">
   <div class="header">
     <div class="avater">
-      <img src={{data.info.avater}} alt="">
+      <img src={{info.avater}} alt="">
     </div>
-    <div class="name">{{data.info.name}}</div>
-    <div class="detail">{{data.info.detail}}</div>
+    <div class="name">{{info.name}}</div>
+    <div class="detail">{{info.detail}}</div>
   </div>
   <div class="personal-info">
     <h3 class="title">个人信息</h3>
-    {{each data.info.personal as per}}
+    {{each info.personal as per}}
     <div>
-      <label for={{per[0]}}>{{per[0]}}：</label><div id={{per[0]}}>{{per[1]}}</div>
+      <label for={{per[0]}}>博客：</label><div id={{per[0]}}>{{per[1]}}</div>
     </div>
     {{/each}}
   </div>
   <div class="skills">
     <h3 class="title">个人技能</h3>
     <ul>
-      {{each data.info.skills as skill}}
+      {{each info.skills as skill}}
       <li class="skill">
         <label class="name" for={{skill[0]}}>{{skill[0]}}</label>
         <div class="bar" id={{skill[0]}}>
@@ -31,7 +33,7 @@
   </div>
 </div>
 <div class="experience">
-  {{each data.experience as exp}}
+  {{each exp as exp}}
   <div id={{exp.id}} class="exp">
     <h3 class="title">{{exp.id}}</h3>
     <div class="sub-title">
