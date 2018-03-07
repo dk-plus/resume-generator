@@ -1,3 +1,7 @@
+/**
+ * 渲染个人技能进度条
+ * author: dkplus<dkplus@qq.com>
+ */
 const $ = require('jquery');
 const init = function() {
   // 个人技能进度条值

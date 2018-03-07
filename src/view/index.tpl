@@ -1,7 +1,6 @@
 <div class="info">
   <div class="header">
     <div class="avater">
-      <img src={{data.info.avater}} alt="">
     </div>
     <div class="name">{{data.info.name}}</div>
     <div class="detail">{{data.info.detail}}</div>
@@ -34,27 +33,29 @@
   {{each data.experience as exp}}
   <div id={{exp.id}} class="exp">
     <h3 class="title">{{exp.id}}</h3>
-    <div class="sub-title">
-      <div class="name">{{exp.name}}</div>
-      <div class="time">{{exp.time}}</div>
-    </div>
-    {{each exp.detail as detail}}
-    <div class="detail">
-    {{detail}}
-    </div>
+    {{each exp.project as pro}}
+      <div class="sub-title">
+        <div class="name">{{pro.name}}</div>
+        <div class="time">{{pro.time}}</div>
+      </div>
+      {{each pro.detail as detail}}
+      <div class="detail">
+      {{detail}}
+      </div>
+      {{/each}}
+      <div class="list">
+        <ul>
+          {{each pro.ul as ul}}
+          <li class="item">{{ul}}</li>
+          {{/each}}
+        </ul>
+        <ol>
+          {{each pro.ol as ol}}
+          <li class="item">{{ol}}</li>
+          {{/each}}
+        </ol>
+      </div>
     {{/each}}
-    <div class="list">
-      <ul>
-        {{each exp.ul as ul}}
-        <li class="item">{{ul}}</li>
-        {{/each}}
-      </ul>
-      <ol>
-        {{each exp.ul as ol}}
-        <li class="item">{{ol}}</li>
-        {{/each}}
-      </ol>
-    </div>
   </div>
   {{/each}}
 </div>

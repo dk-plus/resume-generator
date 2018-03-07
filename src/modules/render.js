@@ -1,3 +1,7 @@
+/**
+ * 渲染数据
+ * author: dkplus<dkplus@qq.com>
+ */
 const artT = require('art-template');
 const $ = require('jquery');
 var data = require('./data.json');
@@ -10,7 +14,7 @@ var $html = $(_opt.html);
 const render = (function(){
 
   function init() {
-    console.log('render');
+    // console.log('render');
     renderHtml(data);
   }
 

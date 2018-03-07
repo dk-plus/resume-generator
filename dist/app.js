@@ -10441,16 +10441,21 @@ return jQuery;
 "use strict";
 
 
+/**
+ * 入口文件
+ * author: dkplus<dkplus@qq.com>
+ */
 var $ = __webpack_require__(0);
 var render = __webpack_require__(2);
 var resetCss = __webpack_require__(11);
 
 __webpack_require__(12);
 
+console.log('%cresume-generator 1.0.0', "background:linear-gradient(to right,#00343F,#1db0b8);height:2rem;line-height:2rem;font-size:1rem;font-weight:bold;color:#fff;border-left:5px solid #1db0b8;border-right:3px solid #00343F;border-radius:0 0 30px 0;padding:0 10px;text-shadow:0 0 5px #000");
 render.init();
 resetCss.init();
 
-console.log($);
+// console.log($);
 
 /***/ }),
 /* 2 */
@@ -10459,6 +10464,10 @@ console.log($);
 "use strict";
 
 
+/**
+ * 渲染数据
+ * author: dkplus<dkplus@qq.com>
+ */
 var artT = __webpack_require__(3);
 var $ = __webpack_require__(0);
 var data = __webpack_require__(9);
@@ -10471,7 +10480,7 @@ var $html = $(_opt.html);
 var render = function () {
 
   function init() {
-    console.log('render');
+    // console.log('render');
     renderHtml(data);
   }
 
@@ -11778,7 +11787,7 @@ if (true) {
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = {"info":{"avater":"img.jpg","name":"邓康","detail":"意向：前端开发","personal":[["e-mail","dkplus@qq.com"],["地址","天河龙洞广东金融学院"],["博客","www.cnblogs.cn/dkplus"],["github","github.com/dk-plus"],["手机","13556130815"]],"skills":[["css",90],["javascript",80],["webpack",60],["nodejs",40],["canvas",40],["html",90]]},"experience":[{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]},{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]},{"id":"教育经历","name":"广东金融学院","time":"2015.09-至今","detail":["学习各种知识，改换行了","终于换行了"],"ol":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"],"ul":["第一件事是怎样","第二件事是怎样","第三件事是怎样","第四件事是怎样","第五件事是怎样"]}]}
+module.exports = {"info":{"name":"邓康","detail":"意向：前端开发","personal":[["e-mail","dkplus@qq.com"],["地址","天河龙洞广东金融学院"],["博客","www.cnblogs.com/dkplus"],["github","github.com/dk-plus"],["手机","13556130815"]],"skills":[["html",90],["css",90],["javascript",70],["webpack",60],["nodejs",40],["canvas",40],["photoshop",70],["沟通协调",70]]},"experience":[{"id":"教育经历","project":[{"name":"广东金融学院","time":"2015.09-至今","detail":["英语六级","加入学校IT社团爪哇部落，成为前端副组长，获校园软件设计大赛三等奖，"]}]},{"id":"实习经历","project":[{"name":"阿里巴巴-pp助手","time":"2018.01-至今","detail":["配合运营同学和设计同学，负责pp助手的运营与营销活动页的制作与维护","这次实习学到的："],"ul":["与运营和设计沟通需求，以最合理的需求和最佳的效果实现页面","用rem适配移动端，webpack项目工程化和nodejs模块化开发，git多人协作","调试页面发现和解决各种工具的报错以及测试同学提到bug","阅读、学习团队文档与代码规范"]}]},{"id":"项目经历","project":[{"name":"pp助手春节活动","time":"2018新年期间","detail":["利用zepto操作页面元素以及相关的团队类库制作动画"]},{"name":"resume-generator","time":"2018.03","detail":["一个用art-template渲染的简历生成器，只需编写json数据即可生成简历"]},{"name":"web-slide","time":"2018.02","detail":["一个网页ppt，也是基于art-template渲染"]}]},{"id":"自我评价","project":[{"name":"前端学习","time":"2016.12-至今","ul":["学习基础，编写html、css以及一些css3动画，熟悉ps切图","学习js，看javascript高级程序设计、语言精粹、canvas开发；","学习前端动画：dom动画，css3动画，canvas动画；","初次接触jquery、bootstrap、webpack。","学习nodejs、es6模块化开发与项目工程化；","学习git多人协作；"]}]}]}
 
 /***/ }),
 /* 10 */
@@ -11788,7 +11797,7 @@ module.exports = function (obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '<div class="info">\r\n  <div class="header">\r\n    <div class="avater">\r\n      <img src={{data.info.avater}} alt="">\r\n    </div>\r\n    <div class="name">{{data.info.name}}</div>\r\n    <div class="detail">{{data.info.detail}}</div>\r\n  </div>\r\n  <div class="personal-info">\r\n    <h3 class="title">个人信息</h3>\r\n    {{each data.info.personal as per}}\r\n    <div>\r\n      <label for={{per[0]}}>{{per[0]}}：</label><div id={{per[0]}}>{{per[1]}}</div>\r\n    </div>\r\n    {{/each}}\r\n  </div>\r\n  <div class="skills">\r\n    <h3 class="title">个人技能</h3>\r\n    <ul>\r\n      {{each data.info.skills as skill}}\r\n      <li class="skill">\r\n        <label class="name" for={{skill[0]}}>{{skill[0]}}</label>\r\n        <div class="bar" id={{skill[0]}}>\r\n          <div class="full">\r\n            <div class="val" data-val={{skill[1]}}></div>\r\n          </div>\r\n        </div>\r\n      </li>\r\n      {{/each}}\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div class="experience">\r\n  {{each data.experience as exp}}\r\n  <div id={{exp.id}} class="exp">\r\n    <h3 class="title">{{exp.id}}</h3>\r\n    <div class="sub-title">\r\n      <div class="name">{{exp.name}}</div>\r\n      <div class="time">{{exp.time}}</div>\r\n    </div>\r\n    {{each exp.detail as detail}}\r\n    <div class="detail">\r\n    {{detail}}\r\n    </div>\r\n    {{/each}}\r\n    <div class="list">\r\n      <ul>\r\n        {{each exp.ul as ul}}\r\n        <li class="item">{{ul}}</li>\r\n        {{/each}}\r\n      </ul>\r\n      <ol>\r\n        {{each exp.ul as ol}}\r\n        <li class="item">{{ol}}</li>\r\n        {{/each}}\r\n      </ol>\r\n    </div>\r\n  </div>\r\n  {{/each}}\r\n</div>';
+__p += '<div class="info">\r\n  <div class="header">\r\n    <div class="avater">\r\n    </div>\r\n    <div class="name">{{data.info.name}}</div>\r\n    <div class="detail">{{data.info.detail}}</div>\r\n  </div>\r\n  <div class="personal-info">\r\n    <h3 class="title">个人信息</h3>\r\n    {{each data.info.personal as per}}\r\n    <div>\r\n      <label for={{per[0]}}>{{per[0]}}：</label><div id={{per[0]}}>{{per[1]}}</div>\r\n    </div>\r\n    {{/each}}\r\n  </div>\r\n  <div class="skills">\r\n    <h3 class="title">个人技能</h3>\r\n    <ul>\r\n      {{each data.info.skills as skill}}\r\n      <li class="skill">\r\n        <label class="name" for={{skill[0]}}>{{skill[0]}}</label>\r\n        <div class="bar" id={{skill[0]}}>\r\n          <div class="full">\r\n            <div class="val" data-val={{skill[1]}}></div>\r\n          </div>\r\n        </div>\r\n      </li>\r\n      {{/each}}\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div class="experience">\r\n  {{each data.experience as exp}}\r\n  <div id={{exp.id}} class="exp">\r\n    <h3 class="title">{{exp.id}}</h3>\r\n    {{each exp.project as pro}}\r\n      <div class="sub-title">\r\n        <div class="name">{{pro.name}}</div>\r\n        <div class="time">{{pro.time}}</div>\r\n      </div>\r\n      {{each pro.detail as detail}}\r\n      <div class="detail">\r\n      {{detail}}\r\n      </div>\r\n      {{/each}}\r\n      <div class="list">\r\n        <ul>\r\n          {{each pro.ul as ul}}\r\n          <li class="item">{{ul}}</li>\r\n          {{/each}}\r\n        </ul>\r\n        <ol>\r\n          {{each pro.ol as ol}}\r\n          <li class="item">{{ol}}</li>\r\n          {{/each}}\r\n        </ol>\r\n      </div>\r\n    {{/each}}\r\n  </div>\r\n  {{/each}}\r\n</div>';
 
 }
 return __p
@@ -11801,6 +11810,10 @@ return __p
 "use strict";
 
 
+/**
+ * 渲染个人技能进度条
+ * author: dkplus<dkplus@qq.com>
+ */
 var $ = __webpack_require__(0);
 var init = function init() {
   // 个人技能进度条值
