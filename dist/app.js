@@ -10448,8 +10448,9 @@ return jQuery;
 var $ = __webpack_require__(0);
 var render = __webpack_require__(2);
 var resetCss = __webpack_require__(11);
-
-__webpack_require__(12);
+var Config = __webpack_require__(20);
+// require('./view/index.less');
+__webpack_require__(25)("./" + Config.theme + '/index.less');
 
 console.log('%cresume-generator 1.0.0', "background:linear-gradient(to right,#00343F,#1db0b8);height:2rem;line-height:2rem;font-size:1rem;font-weight:bold;color:#fff;border-left:5px solid #1db0b8;border-right:3px solid #00343F;border-radius:0 0 30px 0;padding:0 10px;text-shadow:0 0 5px #000");
 render.init();
@@ -11831,10 +11832,60 @@ module.exports = {
 };
 
 /***/ }),
-/* 12 */
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var config = {
+  doc: {
+    title: 'dkplus的简历'
+  },
+  theme: 'default'
+};
+
+module.exports = config;
+
+/***/ }),
+/* 21 */,
+/* 22 */,
+/* 23 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 24 */,
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./default/index.less": 23
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 25;
 
 /***/ })
 /******/ ]);
