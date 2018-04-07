@@ -70,6 +70,14 @@ body {
   align-items: flex-start;
   color: #666;
 }
+@media screen and (max-width: 500px) {
+  #main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 #main > div {
   padding: 0;
 }
@@ -77,6 +85,11 @@ body {
   width: 33.3%;
   min-width: 300px;
   height: 100%;
+}
+@media (max-width: 500px) {
+  #main .info {
+    width: 100%;
+  }
 }
 #main .info .header {
   position: relative;
@@ -159,6 +172,11 @@ body {
   width: 66.7%;
   height: 100%;
   border-left: 1px solid #999;
+}
+@media screen and (max-width: 500px) {
+  #main .experience {
+    width: 100%;
+  }
 }
 #main .experience .exp {
   padding: 0 20px;

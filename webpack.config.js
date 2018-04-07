@@ -1,12 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlExtract = require('html-webpack-plugin');
 
 const extractLess = new ExtractTextPlugin({
     filename: 'app.css'
-});
-const htmlExtract = new HtmlExtract({
-    filename: './index.html',
-    template: './src/index.html'
 });
 
 const _config = {
@@ -58,8 +53,7 @@ const _config = {
         fs: 'empty'
     },
     plugins: [
-        extractLess,
-        htmlExtract
+        extractLess
     ]
 }
 module.exports = _config;

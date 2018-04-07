@@ -9,7 +9,10 @@ body {
   .flex(row);
   width: 100%;
   align-items: flex-start;
-  color: #666;;
+  color: #666;
+  @media screen and (max-width: 500px) {
+    .flex(column);
+  };
   > div {
     padding: 0;
   }
@@ -17,6 +20,9 @@ body {
     width: 33.3%;
     min-width: 300px;
     height: 100%;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
     .header {
       position: relative;
       width: 100%;
@@ -90,6 +96,9 @@ body {
     width: 66.7%;
     height: 100%;
     border-left: 1px solid #999;
+    @media screen and (max-width: 500px){
+      width: 100%;
+    }
     .exp {    
       padding: 0 20px;
       .sub-title {
