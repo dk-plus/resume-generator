@@ -1,0 +1,64 @@
+{{include '/header'}}
+<h2>首要信息</h2>
+<input type="text" data-type="name" placeholder="姓名">
+<input type="text" data-type="detail" placeholder="详细">
+<hr>
+<h2>个人信息</h2>
+<button class="add">添加</button>
+<button class="minus">删除</button>
+<div data-type="personal">
+  <div>
+    <input type="text" placeholder="比如：地址">
+    <input type="text" placeholder="填写你的地址">
+  </div>
+</div>
+<hr>
+<h3>技能</h3>
+<button class="add">添加</button>
+<button class="minus">删除</button>
+<div data-type="skills">
+  <div>
+    <input type="text" placeholder="ps">
+    <input type="range" min="0" max="100" value="0">
+  </div>
+</div>
+<hr>
+<h2>个人经历</h2>
+<button class="add">添加</button>
+<button class="minus">删除</button>
+<div data-type="exp">
+  <div id="exp1">
+    <hr>
+    <input type="text" data-type="id" placeholder="比如：教育经历">
+    <h3>项目</h3>
+    <button class="add">添加</button>
+    <button class="minus">删除</button>
+    <div>
+      <div data-type="project">
+        <hr>
+        <input type="text" data-type="name" placeholder="经历名称">
+        <input type="text" data-type="time" placeholder="时间">
+        <h3>详细要点</h3>
+        <button class="add">添加</button>
+        <button class="minus">删除</button>
+        <div data-type="detail">
+          <input type="text" placeholder="要点">
+        </div>
+        <h3>详细要点（无序列表）</h3>
+        <button class="add">添加</button>
+        <button class="minus">删除</button>
+        <div data-type="ul">
+          <input type="text" placeholder="要点">
+        </div>
+        <h3>详细要点（有序列表）</h3>
+        <button class="add">添加</button>
+        <button class="minus">删除</button>
+        <div data-type="ol">
+          <input type="text" placeholder="要点">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="btn">btn</button>
+{{include '/footer'}}

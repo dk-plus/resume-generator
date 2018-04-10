@@ -10447,11 +10447,12 @@ return jQuery;
  */
 var $ = __webpack_require__(0);
 var resetCss = __webpack_require__(2);
-
+var input = __webpack_require__(11);
 __webpack_require__(3);
 
 console.log('%cresume-generator 2.0.0', "background:linear-gradient(to right,#00343F,#1db0b8);height:2rem;line-height:2rem;font-size:1rem;font-weight:bold;color:#fff;border-left:5px solid #1db0b8;border-right:3px solid #00343F;border-radius:0 0 30px 0;padding:0 10px;text-shadow:0 0 5px #000");
 resetCss.init();
+input.init();
 
 // console.log($);
 
@@ -10487,6 +10488,118 @@ module.exports = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var input = function () {
+
+  // info
+  function getHeader() {
+    info.name = $('[data-type = name]').val();
+    info.detail = $('[data-type = detail]').val();
+  }
+  function getPersonal() {
+    var arr = [];
+    $('[data-type = personal]').children().each(function (index, item) {
+      var newArr = [];
+      $(item).children().each(function (index, item) {
+        newArr.push($(item).val());
+      });
+      arr.push(newArr);
+    });
+    info.personal = arr;
+  }
+  function getSkills() {
+    var arr = [];
+    $('[data-type = skills]').children().each(function (index, item) {
+      var newArr = [];
+      $(item).children().each(function (index, item) {
+        newArr.push($(item).val());
+      });
+      arr.push(newArr);
+    });
+    info.skills = arr;
+  }
+
+  // exp
+  function getExp() {
+    $('[data-type=exp]').children().each(function (index, item) {
+      var newExp = {};
+      newExp.id = $(item).find("[data-type=id]").val();
+      newExp.project = [];
+      $(item).find("[data-type=project]").each(function (index, item) {
+        var newProject = {};
+        newProject.detail = [];
+        newProject.ul = [];
+        newProject.ol = [];
+        newProject.name = $(item).find("[data-type=name]").val();
+        newProject.time = $(item).find("[data-type=time]").val();
+        $(item).find("[data-type=detail]").children().each(function (index, item) {
+          newProject.detail.push($(item).val());
+        });
+        $(item).find("[data-type=ul]").children().each(function (index, item) {
+          newProject.ul.push($(item).val());
+        });
+        $(item).find("[data-type=ol]").children().each(function (index, item) {
+          newProject.ol.push($(item).val());
+        });
+        newExp.project.push(newProject);
+      });
+      exp.push(newExp);
+    });
+  }
+
+  var obj = {};
+  var info = {};
+  var exp = [];
+  // $('input').val(1);
+  function init() {
+    $('#btn').on('click', function () {
+      obj = {};
+      info = {};
+      exp = [];
+      getHeader();
+      getPersonal();
+      getSkills();
+      getExp();
+      obj.info = info;
+      obj.experience = exp;
+      console.log(obj);
+      console.log(JSON.stringify(obj));
+      $.ajax({
+        url: '/input',
+        method: 'post',
+        data: JSON.stringify(obj)
+      });
+    });
+    $('body').on('click', '.add', function (e) {
+      var clone = $(e.target).next().next().children().first().clone();
+      $(e.target).next().next().append(clone);
+    });
+
+    $('body').on('click', '.minus', function (e) {
+      $(e.target).next().children().last().remove();
+    });
+  }
+  return {
+    init: init
+  };
+}();
+
+module.exports = input;
 
 /***/ })
 /******/ ]);
