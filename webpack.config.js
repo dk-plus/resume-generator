@@ -1,14 +1,19 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlExtract = require('html-webpack-plugin');
 
 const extractLess = new ExtractTextPlugin({
-    filename: 'app.css'
+    filename: './css/app.css'
+});
+const htmlExtract = new HtmlExtract({
+    filename: './index.html',
+    template: './src/views/index.html'
 });
 
 const _config = {
-    entry: './src/index.js',
+    entry: './src/modules/app/index/index.js',
     output: {
-        path: __dirname +'/dist',
-        filename: 'app.js'
+        path: __dirname + '/dist',
+        filename: 'js/app.js'
     },
     module: {
         rules: [
@@ -42,9 +47,13 @@ const _config = {
                 }
             },
             {
-                test: /\.(png|gif|jpg)$/,
+                test: /\.(jpg|png|gif)$/,
                 use: {
-                    loader: 'url-loader'
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8192,
+                        name: './img/[name].[ext]'
+                    }
                 }
             }
         ]
@@ -53,7 +62,8 @@ const _config = {
         fs: 'empty'
     },
     plugins: [
-        extractLess
+        extractLess,
+        htmlExtract
     ]
 }
 module.exports = _config;

@@ -1,0 +1,92 @@
+@import 'reset.less';
+@import 'mixin.less';
+
+.list() {
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #333;
+    transition: 0.2s;
+    &:hover {
+      background: rgb(235, 235, 235);
+    }
+  } 
+}
+
+.list-exp() {
+  .item {
+    margin: 2px 0;
+    margin-left: 15px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #333;
+    transition: 0.2s;
+    &:hover {
+      background: rgb(235, 235, 235);
+    }
+  } 
+}
+
+.tag() {
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    background: rgb(235, 235, 235);
+    border-radius: 3px;
+    transition: 0.3s;
+    color: #333;
+    padding: 2px;
+    margin: 3px;
+    &:hover {
+      background: rgb(194, 194, 194);
+      color: #222;
+    }
+  }
+}
+.content {
+
+  .info-list {
+    .list();  
+  }
+
+  .skill-list {
+    .list();
+  }
+
+  .tag-list {
+    .tag();
+  }
+
+  .exp {
+    margin: 7px;
+    .main {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+      margin: 5px 0;
+      .title {
+
+      }
+      .time {
+
+      }
+    }
+    .para {
+      margin: 5px 0;
+    }
+    .ol-list {
+      .list-exp();
+      margin: 5px 0;
+    }
+    .ul-list {
+      .list-exp();
+      margin: 5px 0;
+    }
+  }
+}
