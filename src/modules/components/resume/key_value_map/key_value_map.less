@@ -1,0 +1,29 @@
+.key-value-map {
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    transition: 0.3s;
+    &:hover {
+      background: #e6f7ff;
+    }
+    .label {
+      width: 20%;
+      min-width: 80px;
+    }
+    .value {}
+    .progress-full-bar {
+      width: 80%;
+      height: 10px;
+      border-radius: 20px;
+      background: #b7eb8f;
+      overflow: hidden;
+      box-shadow: 0 0 3px #eee;
+      .progress-value-bar {
+        height: 100%;
+        background: #52c41a;
+      }
+    }
+  }
+}

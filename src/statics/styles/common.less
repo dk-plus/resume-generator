@@ -1,92 +1,54 @@
 @import 'reset.less';
 @import 'mixin.less';
 
-.list() {
-  .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: #333;
-    transition: 0.2s;
-    &:hover {
-      background: rgb(235, 235, 235);
-    }
-  } 
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+      --moz-@{style}: @value;
+       --ms-@{style}: @value;
+            @{style}: @value;
 }
-
-.list-exp() {
-  .item {
-    margin: 2px 0;
-    margin-left: 15px;
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: #333;
-    transition: 0.2s;
-    &:hover {
-      background: rgb(235, 235, 235);
-    }
-  } 
-}
-
-.tag() {
-  display: flex;
-  flex-wrap: wrap;
-  .item {
-    background: rgb(235, 235, 235);
-    border-radius: 3px;
-    transition: 0.3s;
-    color: #333;
-    padding: 2px;
-    margin: 3px;
-    &:hover {
-      background: rgb(194, 194, 194);
-      color: #222;
-    }
+.keyframes(@name) { 
+  @-webkit-keyframes @name {
+    .-frames(-webkit-)
+  }
+  @-moz-keyframes @name {
+    .-frames(-moz-)
+  }
+  @-o-keyframes @name {
+    .-frames(-o-)
+  }
+  @-ms-keyframes @name {
+    .-frames(-ms-)
+  }
+  @keyframes @name {
+    .-frames()
   }
 }
-.content {
-
-  .info-list {
-    .list();  
-  }
-
-  .skill-list {
-    .list();
-  }
-
-  .tag-list {
-    .tag();
-  }
-
-  .exp {
-    margin: 7px;
-    .main {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-      color: #333;
-      font-size: 18px;
-      margin: 5px 0;
-      .title {
-
-      }
-      .time {
-
-      }
+/**
+* 动画声明举例
+.flash(){
+    .keyframes(flash);
+    .-frames(@-...){
+        0%, 50%, 100% {
+            .opacity(100);
+        }
+        25%, 75% {
+            .opacity(0);
+        }
     }
-    .para {
-      margin: 5px 0;
-    }
-    .ol-list {
-      .list-exp();
-      margin: 5px 0;
-    }
-    .ul-list {
-      .list-exp();
-      margin: 5px 0;
-    }
-  }
 }
+.pulse(@t:1.05;@n:pulse){
+    .keyframes(@n);
+    .-frames(@-...){
+        0% {
+            @{-}transform: scale3d(1, 1, 1);
+        }
+        50% {
+            @{-}transform: scale3d(@t, @t, @t);
+        }
+        100% {
+            @{-}transform: scale3d(1, 1, 1);
+        }
+    }
+}
+*/

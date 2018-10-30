@@ -1,19 +1,33 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlExtract = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const extractLess = new ExtractTextPlugin({
-    filename: './css/app.css'
+    filename: './css/app.[hash:8].css'
 });
 const htmlExtract = new HtmlExtract({
     filename: './index.html',
     template: './src/views/index.html'
+});
+const cleanWebpackPlugin = new CleanWebpackPlugin(
+    [
+        'js',
+        'css'
+    ],
+    {
+        root: __dirname + '/dist'
+    }
+);
+const uglifyJs = new UglifyJsPlugin({
+    test: /\.js($|\?)/i
 });
 
 const _config = {
     entry: './src/modules/app/index/index.js',
     output: {
         path: __dirname + '/dist',
-        filename: 'js/app.js'
+        filename: 'js/app.[hash:8].js'
     },
     module: {
         rules: [
@@ -63,7 +77,9 @@ const _config = {
     },
     plugins: [
         extractLess,
-        htmlExtract
+        htmlExtract,
+        cleanWebpackPlugin
     ]
 }
+
 module.exports = _config;

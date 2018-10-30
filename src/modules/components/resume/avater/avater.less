@@ -1,0 +1,30 @@
+.avater {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 15px auto;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px #314659;
+  &.defalut {
+    border-radius: 5px;
+  }
+  &.circle-border {
+    border-radius: 50%;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &.default {
+      width: 100%;
+    }
+    &.width-first {
+      width: 100%;
+    }
+    &.height-first {
+      height: 100%;
+    }
+  }
+}
